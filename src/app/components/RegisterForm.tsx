@@ -61,11 +61,19 @@ export function RegisterForm() {
 
   return (
     <Box component="form" onSubmit={handleSubmit} sx={{ width: "100%", maxWidth: 460 }}>
-      <Typography variant="h3" sx={{fontWeight:700, mb:1}} >
+      <Typography
+        component="h1"
+        sx={{
+          fontSize: { xs: "2rem", sm: "2.5rem", lg: "3rem" },
+          fontWeight: 700,
+          lineHeight: 1.1,
+          mb: 1,
+        }}
+      >
         Crear cuenta
       </Typography>
 
-      <Typography color="text.secondary" sx={{mb:4}}>
+      <Typography color="text.secondary" sx={{ mb: { xs: 3, sm: 4 } }}>
         Únete y descubre recetas increíbles.
       </Typography>
 
@@ -77,6 +85,7 @@ export function RegisterForm() {
 
       <TextField
         fullWidth
+        required
         label="Nombre completo"
         name="name"
         value={form.name}
@@ -86,6 +95,7 @@ export function RegisterForm() {
 
       <TextField
         fullWidth
+        required
         label="Correo electrónico"
         name="email"
         type="email"
@@ -96,6 +106,7 @@ export function RegisterForm() {
 
       <TextField
         fullWidth
+        required
         label="Contraseña"
         name="password"
         type="password"
@@ -111,6 +122,7 @@ export function RegisterForm() {
         disabled={loading}
         sx={{
           mt: 3,
+          minHeight: 52,
           py: 1.5,
           backgroundColor: "#f04b23",
           fontWeight: 700,

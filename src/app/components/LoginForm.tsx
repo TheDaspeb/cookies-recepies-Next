@@ -102,7 +102,7 @@ export function LoginForm({ redirectTo = "/" }: LoginFormProps) {
         />
       </div>
 
-      <div className="mb-6 flex items-center justify-between text-sm">
+      <div className="mb-6 flex flex-col items-start gap-3 text-sm min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between">
         <label className="flex items-center gap-2 text-gray-500">
           <input
             type="checkbox"
@@ -126,7 +126,7 @@ export function LoginForm({ redirectTo = "/" }: LoginFormProps) {
 
       <div className="my-8 flex items-center gap-4">
         <div className="h-px flex-1 bg-[#e0c8b2]" />
-        <span className="text-sm text-gray-400">o continúa con</span>
+        <span className="shrink-0 text-sm text-gray-400">o continúa con</span>
         <div className="h-px flex-1 bg-[#e0c8b2]" />
       </div>
 

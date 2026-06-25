@@ -34,13 +34,13 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       : [];
 
   return (
-    <main className="min-h-screen bg-[#fffaf4] lg:pl-[320px]">
+    <main className="min-h-[calc(100svh-4rem)] bg-[#fffaf4] lg:min-h-[calc(100svh-73px)] lg:pl-80">
       <CatalogSidebar isAuthenticated={session !== null} />
 
       {isCatalogView || isFavoritesView ? (
         <section
           id="catalogo-recetas"
-          className="mx-auto w-full max-w-6xl px-5 py-10"
+          className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8"
           aria-labelledby="catalogo-recetas-title"
         >
           <div className="mb-8 max-w-2xl">
@@ -49,11 +49,11 @@ export default async function HomePage({ searchParams }: HomePageProps) {
             </p>
             <h1
               id="catalogo-recetas-title"
-              className="mt-2 text-4xl font-bold text-[#3f2b20]"
+              className="mt-2 text-3xl font-bold tracking-tight text-[#3f2b20] sm:text-4xl lg:text-5xl"
             >
               {isFavoritesView ? "Tus recetas favoritas" : "Recetas de cocina"}
             </h1>
-            <p className="mt-3 text-lg text-[#765744]">
+            <p className="mt-3 text-base leading-7 text-[#765744] sm:text-lg">
               {isFavoritesView
                 ? "Aquí aparecen las recetas que guardaste con el corazón."
                 : "Explora recetas disponibles sin iniciar sesión."}
@@ -61,7 +61,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           </div>
 
           {recipes.length > 0 ? (
-            <div className="grid auto-rows-fr gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 xl:grid-cols-3 xl:gap-6">
               {recipes.map((recipe) => (
                 <RecipeCard
                   key={recipe.id}
@@ -85,32 +85,32 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         </section>
       ) : (
         <section
-          className="relative flex min-h-[calc(100vh-73px)] items-center bg-cover bg-center px-6 py-16"
+          className="relative flex min-h-[calc(100svh-8.75rem)] items-center bg-cover bg-center px-4 py-14 sm:px-8 sm:py-20 lg:min-h-[calc(100svh-73px)] lg:px-12"
           style={{ backgroundImage: "url('/images/login-dinner.webp')" }}
         >
           <div className="absolute inset-0 bg-[#2d1a10]/55" />
-          <div className="relative max-w-3xl text-white">
+          <div className="relative mx-auto w-full max-w-7xl text-white">
             <p className="text-sm font-bold uppercase tracking-normal text-[#f3d6ba]">
               Cenas memorables empiezan aquí
             </p>
-            <h1 className="mt-4 text-5xl font-bold leading-tight sm:text-6xl">
+            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
               Cooking Now
             </h1>
-            <p className="mt-6 max-w-2xl text-xl leading-8 text-[#fff3e8]">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-[#fff3e8] sm:mt-6 sm:text-xl sm:leading-8">
               Descubre ideas sencillas, aromas irresistibles y recetas pensadas
               para convertir cualquier noche en una cena deliciosa. Elige una
               receta, prende la cocina y prepara algo que todos quieran repetir.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 grid gap-3 min-[420px]:flex min-[420px]:flex-wrap">
               <Link
                 href="/?view=catalog"
-                className="rounded-md border border-[#f3d6ba] bg-white px-5 py-3 text-sm font-bold text-[#6f4e37] shadow-sm transition hover:bg-[#f3e2d0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="rounded-md border border-[#f3d6ba] bg-white px-5 py-3 text-center text-sm font-bold text-[#6f4e37] shadow-sm transition hover:bg-[#f3e2d0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Ver catálogo
               </Link>
               <Link
                 href="/login"
-                className="rounded-md border border-white/70 bg-white/10 px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="rounded-md border border-white/70 bg-white/10 px-5 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Iniciar sesión
               </Link>

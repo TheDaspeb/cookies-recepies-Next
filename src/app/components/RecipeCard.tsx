@@ -25,7 +25,7 @@ export function RecipeCard({
     <Card
       sx={{
         height: "100%",
-        minHeight: 340,
+        minHeight: { xs: 320, sm: 340 },
         display: "flex",
         flexDirection: "column",
         borderRadius: 2,
@@ -42,7 +42,7 @@ export function RecipeCard({
           sx={{
             aspectRatio: "4 / 3",
             display: "block",
-            height: 220,
+            height: "auto",
             objectFit: "cover",
             width: "100%",
           }}
@@ -55,7 +55,7 @@ export function RecipeCard({
           display: "flex",
           flex: 1,
           flexDirection: "column",
-          p: 2,
+          p: { xs: 2, sm: 2.5 },
         }}
       >
         <Typography
@@ -65,7 +65,7 @@ export function RecipeCard({
             fontSize: "1.05rem",
             fontWeight: 700,
             lineHeight: 1.25,
-            minHeight: 42,
+            minHeight: { sm: 42 },
           }}
         >
           {name}
@@ -91,7 +91,7 @@ export function RecipeCard({
             href={`/recipes/${id}`}
             className="inline-flex min-h-10 flex-1 items-center justify-center rounded-md border border-[#d6b89a] bg-white px-4 py-2 text-sm font-semibold text-[#6f4e37] shadow-sm transition hover:border-[#b98c67] hover:bg-[#f3e2d0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9a6a45]"
           >
-            View more
+            Ver receta
           </Link>
         </div>
       </CardContent>

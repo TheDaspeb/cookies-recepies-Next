@@ -7,7 +7,7 @@ export default function RegisterPage() {
     <Box
       component="main"
       sx={{
-        minHeight: "100vh",
+        minHeight: { xs: "calc(100svh - 4rem)", lg: "calc(100svh - 73px)" },
         display: "grid",
         gridTemplateColumns: {
           xs: "1fr",
@@ -42,22 +42,26 @@ export default function RegisterPage() {
               "linear-gradient(90deg, rgba(0,0,0,0.75), rgba(0,0,0,0.25))",
             display: "flex",
             alignItems: "center",
-            px: 8,
+            px: { md: 5, lg: 8 },
           }}
         >
           <Box>
             <Typography
-              variant="h2"
+              component="h1"
               color="white"
-              sx={{fontWeight:700, maxWidth:520}}
-              
+              sx={{
+                fontSize: { md: "2.5rem", lg: "3.75rem" },
+                fontWeight: 700,
+                lineHeight: 1.1,
+                maxWidth: 520,
+              }}
             >
               Comparte tu pasión por la buena comida
             </Typography>
 
             <Typography 
             color="white"
-            sx={{mt:2, fontSize:20, maxWidth:440}} 
+            sx={{ mt: 2, fontSize: { md: 18, lg: 20 }, maxWidth: 440 }}
             >
               Guarda tus recetas favoritas y descubre nuevos sabores.
             </Typography>
@@ -71,11 +75,13 @@ export default function RegisterPage() {
           justifyContent: "center",
           alignItems: "center",
           px: {
-            xs: 3,
-            md: 8,
+            xs: 2,
+            sm: 4,
+            md: 5,
+            lg: 8,
           },
-          py: 6,
-          backgroundColor: "#fafafa",
+          py: { xs: 5, sm: 6 },
+          backgroundColor: "#fffaf4",
         }}
       >
         <RegisterForm />
